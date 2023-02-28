@@ -1,0 +1,6 @@
+pk,model,fields__codename,fields__name,fields__content_type
+22.0,auth.permission,add_logentry,Can add log entry,8
+,auth.permission,change_logentry,Can change log entry,8
+24.0,,delete_logentry,Can delete log entry,8
+4.0,auth.permission,add_group,Can add group,2
+10.0,auth.permission,add_message,Can add message,4

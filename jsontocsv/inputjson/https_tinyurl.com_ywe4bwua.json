@@ -7,7 +7,7 @@
             "content_type": 8
         }
     }, {
-        "pk": 23,
+        "pk": null,
         "model": "auth.permission",
         "fields": {
             "codename": "change_logentry",
@@ -16,7 +16,7 @@
         }
     }, {
         "pk": 24,
-        "model": "auth.permission",
+        "model": null,
         "fields": {
             "codename": "delete_logentry",
             "name": "Can delete log entry",
