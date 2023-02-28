@@ -50,16 +50,22 @@ def flatten_json(json):
     return flattened_result
 
 
-try:
-    f = open("https_tinyurl.com_ywe4bwua.json", "r")
-except (FileNotFoundError, PermissionError, OSError):
-    print("Error opening file")
-    exit(1)
-y = json.loads(f.read())
-flat = flatten_json(y)
-df = pd.DataFrame.from_dict(same_length(flat), orient='columns')
-df.to_csv('output.csv', index=False, encoding='utf-8')
-
+def custom_solution(json_list: list, inputfolder: str = "inputjson", outputfolder: str = "outputcustomsolution"):
+    for file in json_list:
+        try:
+            f = open(inputfolder + "/"  + file, "r")
+        except (FileNotFoundError, PermissionError, OSError):
+            print("Error opening file " + file)
+            continue
+        try:
+            y = json.loads(f.read())
+            flat = flatten_json(y)
+            df = pd.DataFrame.from_dict(same_length(flat), orient='columns')
+            df.to_csv(outputfolder + "/" + file + ".csv" , index=False, encoding='utf-8')
+            print("Converted " + file + " to CSV")
+        except:
+            print("Error with " + file)
+            continue
 
 
 
