@@ -8,7 +8,6 @@ def same_length(flattened: dict):
         if isinstance(flattened[key], list):
             if len(flattened[key]) > max:
                 max = len(flattened[key])
-    # print("Max length: " + str(max))
     for key in flattened.keys():
         if isinstance(flattened[key], list):
             if len(flattened[key]) < max:
