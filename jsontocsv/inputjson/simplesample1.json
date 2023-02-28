@@ -1,11 +1,13 @@
 {
-  "country": "Italy",
-  "provinces__province": "Italy",
-  "provinces__confirmed": 207428,
-  "provinces__recovered": 78249,
-  "provinces__deaths": 28236,
-  "provinces__active": 100943,
-  "latitude": 41.87194,
-  "longitude": 12.56738,
-  "date": "2020-05-01"
+  "data": {
+    "country": "Italy",
+    "provinces__province": "Italy",
+    "provinces__confirmed": 207428,
+    "provinces__recovered": 78249,
+    "provinces__deaths": 28236,
+    "provinces__active": 100943,
+    "latitude": 41.87194,
+    "longitude": 12.56738,
+    "date": "2020-05-01"
+  }
 }

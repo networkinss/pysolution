@@ -16,6 +16,14 @@ def same_length(flattened: dict):
     return flattened
 
 
+
+def value_to_list(flattened: dict):
+    for key, value in flattened.items():
+        if not isinstance(value, list):
+            flattened[key] = [value]
+    return flattened
+
+
 def process_value(keys, value, flattened):
     if isinstance(value, dict):
         for key in value.keys():
@@ -60,8 +68,10 @@ def custom_solution(json_list: list, inputfolder: str = "inputjson", outputfolde
         try:
             y = json.loads(f.read())
             flat = flatten_json(y)
-            df = pd.DataFrame.from_dict(same_length(flat), orient='columns')
-            df.to_csv(outputfolder + "/" + file + ".csv" , index=False, encoding='utf-8')
+            list_values = value_to_list(flat)
+            samlen = same_length(list_values)
+            df = pd.DataFrame.from_dict(samlen, orient='columns')
+            df.to_csv(outputfolder + "/" + file + ".csv", index=False, encoding='utf-8')
             print("Converted " + file + " to CSV")
         except:
             print("Error with " + file)
