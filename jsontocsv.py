@@ -2,36 +2,6 @@ import json
 import pandas as pd
 
 
-def process_value(keys, value, flattened):
-    if isinstance(value, dict):
-        for key in value.keys():
-            process_value(keys + [key], value[key], flattened)
-    elif isinstance(value, list):
-        for idx, v in enumerate(value):
-            process_value(keys, v, flattened)
-            # process_value(keys + [str(idx)], v, flattened)
-
-    else:
-        jkey = '__'.join(keys)
-        if not flattened.get(jkey) is None:
-            if isinstance(flattened[jkey], list):
-                flattened[jkey] = flattened[jkey] + [value]
-            else:
-                flattened[jkey] = [flattened[jkey]] + [value]
-        else:
-            flattened[jkey] = value
-
-
-def flatten_json(json):
-    flattened_result = {}
-    if not isinstance(json, dict):
-        print("JSON object must be a dict instance, but is type " + str(type(json)))
-        return flattened_result
-    for key in json.keys():
-        process_value([key], json[key], flattened_result)
-    return flattened_result
-
-
 def same_length(flattened: dict):
     max = 0
     for key in flattened.keys():
@@ -47,16 +17,48 @@ def same_length(flattened: dict):
     return flattened
 
 
+def process_value(keys, value, flattened):
+    if isinstance(value, dict):
+        for key in value.keys():
+            process_value(keys + [key], value[key], flattened)
+    elif isinstance(value, list):
+        for idx, v in enumerate(value):
+            process_value(keys, v, flattened)
+    else:
+        jkey = '__'.join(keys)
+        if not flattened.get(jkey) is None:
+            if isinstance(flattened[jkey], list):
+                flattened[jkey] = flattened[jkey] + [value]
+            else:
+                flattened[jkey] = [flattened[jkey]] + [value]
+        else:
+            flattened[jkey] = value
+
+
+def flatten_json(json):
+    flattened_result = {}
+    json_list = []
+    if isinstance(json, dict):
+        json_list.append(json)
+    elif isinstance(json, list):
+        json_list = json
+    else:
+        print("JSON object must be a dict or list instance, but is type " + str(type(json)))
+        return {}
+    for j in json_list:
+        for key in j.keys():
+            process_value([key], j[key], flattened_result)
+    return flattened_result
+
+
 try:
-    f = open("input.json", "r")
+    f = open("https_tinyurl.com_ywe4bwua.json", "r")
 except (FileNotFoundError, PermissionError, OSError):
     print("Error opening file")
     exit(1)
 y = json.loads(f.read())
 flat = flatten_json(y)
-equallength = same_length(flat)
-df = pd.DataFrame.from_dict(equallength, orient='columns')
-# df = pd.DataFrame.from_dict(flat, orient='columns')
+df = pd.DataFrame.from_dict(same_length(flat), orient='columns')
 df.to_csv('output.csv', index=False, encoding='utf-8')
 
 
