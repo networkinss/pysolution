@@ -1,0 +1,2 @@
+data__country,data__provinces__province,data__provinces__confirmed,data__provinces__recovered,data__provinces__deaths,data__provinces__active,data__latitude,data__longitude,data__date
+Italy,Italy,207428,78249,28236,100943,41.87194,12.56738,2020-05-01

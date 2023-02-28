@@ -1,0 +1,12 @@
+get,parameters__country,parameters__day,results,response__continent,response__country,response__population,response__cases__new,response__cases__active,response__cases__critical,response__cases__recovered,response__cases__1M_pop,response__cases__total,response__deaths__new,response__deaths__1M_pop,response__deaths__total,response__tests__1M_pop,response__tests__total,response__day,response__time
+history,germany,2020-05-18,11,Europe,Germany,,630.0,14561,1133,154600,2117,177281,71.0,,8120,,3147771,2020-05-18,2020-05-18 21:30:05+00:00
+history,germany,2020-05-18,11,Europe,Germany,,617.0,14549,1133,154600,2117,177268,70.0,,8119,,3147771,2020-05-18,2020-05-18 20:45:05+00:00
+history,germany,2020-05-18,11,Europe,Germany,,562.0,14516,1133,154600,2116,177213,48.0,,8097,,3147771,2020-05-18,2020-05-18 19:15:05+00:00
+history,germany,2020-05-18,11,Europe,Germany,,531.0,14497,1133,154600,2116,177182,36.0,,8085,,3147771,2020-05-18,2020-05-18 18:00:05+00:00
+history,germany,2020-05-18,11,Europe,Germany,,531.0,14497,1166,154600,2116,177182,36.0,,8085,,3147771,2020-05-18,2020-05-18 17:30:03+00:00
+history,germany,2020-05-18,11,Europe,Germany,,418.0,14399,1166,154600,2114,177069,21.0,,8070,,3147771,2020-05-18,2020-05-18 17:00:04+00:00
+history,germany,2020-05-18,11,Europe,Germany,,282.0,14271,1166,154600,2113,176933,13.0,,8062,,3147771,2020-05-18,2020-05-18 16:00:04+00:00
+history,germany,2020-05-18,11,Europe,Germany,,156.0,14153,1166,154600,2111,176807,5.0,,8054,,3147771,2020-05-18,2020-05-18 14:15:04+00:00
+history,germany,2020-05-18,11,Europe,Germany,,137.0,14136,1166,154600,2111,176788,3.0,,8052,,3147771,2020-05-18,2020-05-18 12:45:09+00:00
+history,germany,2020-05-18,11,Europe,Germany,,,14002,1166,154600,2109,176651,,,8049,,3147771,2020-05-18,2020-05-18 12:30:06+00:00
+history,germany,2020-05-18,11,Europe,Germany,,407.0,15202,1166,153400,2109,176651,22.0,,8049,,3147771,2020-05-18,2020-05-18 04:45:04+00:00
